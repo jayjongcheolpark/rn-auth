@@ -9,6 +9,7 @@ import {
   FIREBASE_MESSAGING_SENDER_ID,
 } from 'react-native-dotenv'
 import { Header } from './src/components/common'
+import LoginForm from './src/components/LoginForm'
 
 class App extends Component {
   componentDidMount() {
@@ -25,7 +26,7 @@ class App extends Component {
     return (
       <View>
         <Header headerText="Authentication" />
-        <Text>An app</Text>
+        <LoginForm />
       </View>
     )
   }
