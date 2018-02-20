@@ -24,14 +24,16 @@ const styles = {
   },
 }
 
-const Input = ({ label, value, onChangeText, placeholder }) => {
+const Input = ({ label, value, onChangeText, placeholder, secureTextEntry }) => {
   const { inputStyle, labelStyle, containerStyle } = styles
   return (
     <View style={containerStyle}>
       <Text style={labelStyle}>{label}</Text>
       <TextInput
+        secureTextEntry={secureTextEntry}
         placeholder={placeholder}
         autoCorrect={false}
+        autoCapitalize="none"
         value={value}
         onChangeText={onChangeText}
         style={inputStyle}
@@ -40,11 +42,16 @@ const Input = ({ label, value, onChangeText, placeholder }) => {
   )
 }
 
+Input.defaultProps = {
+  secureTextEntry: false,
+}
+
 Input.propTypes = {
   label: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   onChangeText: PropTypes.func.isRequired,
   placeholder: PropTypes.string.isRequired,
+  secureTextEntry: PropTypes.bool,
 }
 
 export { Input }
