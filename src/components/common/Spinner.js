@@ -11,7 +11,7 @@ const styles = {
 }
 
 const Spinner = ({ size }) => (
-  <View style={styles.Spinner}>
+  <View style={styles.spinnerStyle}>
     <ActivityIndicator size={size} />
   </View>
 )
